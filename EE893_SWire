@@ -76,7 +76,7 @@ byte EE893_read_co2(byte *hi, byte *lo, boolean slow)
 
 void setup() {
   // put your setup code here, to run once:
-  SWire.begin(D4, D3); // wake up I2C bus, (SDA, SCL) 
+  SWire.begin(4, 5); // wake up I2C bus, (SDA, SCL) 
   SWire.delay_time_us = 150; //stretch pulses to make it to work
   
   //remove the Atmel register changes
