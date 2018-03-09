@@ -28,3 +28,4 @@ CO2 [ppm] fast mode 704
 Returncode 0
 CO2 [ppm] accurate mode 685
  
+Don't forget that the EE893 is 5V to 7V so need i2C level shifters to the ESP.
