@@ -18,7 +18,7 @@ Remark out the TWBR TWSR lines.
 Add "SWire.delay_time_us = 150;" after "SWire.begin()" to slow bus speeds down. 
 
 testing shows "Returncode 0" is seen on Serial to show valid reading. if 2 or 4 seen then increase SWire.delay_time_us as necessay
-my device was OK at 150 but set value to 200
+my device was OK at 150 but set value to 250
 
 Example ouput
 
