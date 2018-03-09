@@ -5,7 +5,7 @@
 //Replace your "Wire.begin()" with "SWire.begin(SDA, SCL), defaults dangerously to pins 6,7. 
 //so change values to 4,5 2,0 21,22 etc depending on ESP used. You can use most pins.
 //Remark out TWBR TWSR lines.
-//Add "SWire.delay_time_us = 200;" after SWire.begin() to slow bus speeds down. 
+//Add "SWire.delay_time_us = 250;" after SWire.begin() to slow bus speeds down. 
 
 // ensure "Returncode 0" is seen on Serial to show valid reading. 
 //Increase SWire.delay_time_us if necessay
@@ -77,7 +77,7 @@ byte EE893_read_co2(byte *hi, byte *lo, boolean slow)
 void setup() {
   // put your setup code here, to run once:
   SWire.begin(4, 5); // wake up I2C bus, (SDA, SCL) 
-  SWire.delay_time_us = 200; //stretch pulses to make it to work
+  SWire.delay_time_us = 250; //stretch pulses to make it to work
   
   //remove the Atmel register changes
   //TWBR = 200;  // set the TWBR register (bypass wire library) reduce the speed about 3 times
