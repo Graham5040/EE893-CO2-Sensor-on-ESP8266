@@ -1,9 +1,9 @@
 # EE893-CO2-Sensor-on-ESP8266
 EE893 Sensor has arduino example with Atmel registers to lower clock speed  that doesn't work on ESP devices
+Orignal Arduino library by blueberrye-io, https://github.com/blueberrye-io/BB-EE893
 
-
-this file is based on the Arduino example and chnged to Swire libray. Setting Wire.setClock() to low rates e.g. 5000 causes the ESP8266 to reset so use alternative SWire library https://github.com/RaemondBW/SWire/archive/master.zip
-that has delay control to stretch pulses.
+this file is based on the Arduino example and changed to Swire libray. Setting Wire.setClock() to low rates e.g. 5000 causes the ESP8266 to reset so use alternative SWire library by RaemondBW at https://github.com/RaemondBW/SWire/archive/master.zip
+that has delay control to stretch pulses for I2C.
 
 changes made:
 
@@ -11,7 +11,7 @@ change "#include <Wire.h>" to "#include <SWire.h>".
 
 Replace all instances of "Wire" from your project with "SWire" calls.
 
-Replace your "Wire.begin()" with "SWire.begin(SDA, SCL), SWire defaults dangerously to pins 6,7. 
+Replace your "Wire.begin()" with "SWire.begin(SDA, SCL), SWire defaults to pins 6,7. 
 so change values to 4,5 2,0 21,22 etc depending on ESP used. You can use most pins.
 
 Remark out the TWBR TWSR lines.
@@ -27,5 +27,7 @@ Returncode 0
 CO2 [ppm] fast mode 704
 Returncode 0
 CO2 [ppm] accurate mode 685
+ 
+Note a few errors observed about 1.5% with Return codes other than 0. 
  
 Don't forget that the EE893 is 5V to 7V so need i2C level shifters to the ESP.
