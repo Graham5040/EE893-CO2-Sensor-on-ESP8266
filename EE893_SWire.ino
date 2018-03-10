@@ -77,7 +77,7 @@ byte EE893_read_co2(byte *hi, byte *lo, boolean slow)
 void setup() {
   // put your setup code here, to run once:
   SWire.begin(4, 5); // wake up I2C bus, (SDA, SCL) 
-  SWire.delay_time_us = 250; //stretch pulses to make it to work
+  SWire.delay_time_us = 820; //stretch pulses to make it to work
   
   //remove the Atmel register changes
   //TWBR = 200;  // set the TWBR register (bypass wire library) reduce the speed about 3 times
