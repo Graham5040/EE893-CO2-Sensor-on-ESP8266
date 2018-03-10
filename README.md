@@ -15,10 +15,10 @@ Replace your "Wire.begin()" with "SWire.begin(SDA, SCL), SWire defaults to pins 
 so change values to 4,5 2,0 21,22 etc depending on ESP used. You can use most pins.
 
 Remark out the TWBR TWSR lines.
-Add "SWire.delay_time_us = 250;" after "SWire.begin()" to slow bus speeds down. 
+Add "SWire.delay_time_us = 820;" after "SWire.begin()" to slow bus speeds down. 
 
 testing shows "Returncode 0" is seen on Serial to show valid reading. if 2 or 4 seen then increase SWire.delay_time_us as necessay
-my device was OK at 150 but set value to 250
+my device was OK at 250 but set value to 820 to match Arduino timings.
 
 Example ouput
 
@@ -27,7 +27,5 @@ Returncode 0
 CO2 [ppm] fast mode 704
 Returncode 0
 CO2 [ppm] accurate mode 685
- 
-Note a few errors observed about 1.5% with Return codes other than 0. 
  
 Don't forget that the EE893 is 5V to 7V so need i2C level shifters to the ESP.
